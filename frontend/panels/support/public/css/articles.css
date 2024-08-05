@@ -1,0 +1,68 @@
+.main {
+  margin: 7.8rem auto;
+  font-size: 1.5rem;
+  width: 584px;
+}
+.breadcrumb .bi,
+.breadcrumb a {
+  color: black;
+}
+
+.breadcrumb {
+  font-size: 1.3rem;
+  display: flex;
+  gap: 5px;
+}
+.category-info-title {
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: black;
+  margin-top: 1rem;
+}
+.category-info-icon {
+  object-fit: contain;
+  width: 115px;
+  height: 80px;
+}
+.category-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+  margin-top: 3rem;
+}
+.articles {
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.article {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.article h3 {
+  font-size: 1.6rem;
+  color: black;
+  margin: 10px 0;
+}
+.article p {
+  font-size: 1.4rem;
+  text-align: justify;
+}
+
+.article .icon {
+  width: 50px;
+  height: 50px;
+}
+.article a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 100%;
+}

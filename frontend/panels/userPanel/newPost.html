@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ثبت آگهی در دیوار</title>
+    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap_icon/bootstraicon.css" />
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="./public/css/newPost.css" />
+    <link rel="stylesheet" href="./public/css" />
+
+    <link rel="stylesheet" href="../../public/css/main.css" />
+
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="./public/css/share.css" />
+    <link rel="stylesheet" href="../../public/css/product.css" />
+  </head>
+
+  <body>
+    <!--!==========================================Header==========================================!-->
+    <site-header></site-header>
+    <!--!==========================================End Header==========================================!-->
+
+    <!--!===========================================Main==========================================!-->
+    <div class="loader_container">
+      <div class="loader_anim"></div>
+    </div>
+    <main class="main">
+      <div class="container">
+        <p class="new_title">چه چیزی آگهی می‌کنید؟</p>
+        <p class="select_category_title">با جستجو در کادر زیر، دستهٔ آگهی را انتخاب کنید.</p>
+        <div class="search_box">
+          <i class="bi bi-search"></i>
+          <input type="text" id="search-input" placeholder="جستجو در دسته‌ها" />
+          <i id="remove-icon" class="bi bi-x remove-icon"></i>
+          <div class="result" id="result-container"></div>
+        </div>
+        <div id="show-categoies" class="box show-categoies active">
+          <div>
+            <p>دیدن تمام دسته‌های دیوار</p>
+          </div>
+          <i class="bi bi-chevron-left"></i>
+        </div>
+
+        <div id="categories-container">
+          <div class="guide" id="guide-container">
+            <p>نمایش راهنمای دسته‌بندی</p>
+            <label class="switch">
+              <input id="description-checkbox" class="icon-controll" type="checkbox" />
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <section id="categories" class="">
+            <ul class="categories-container">
+              <li>
+                <span>ali</span>
+                <i class="bi bi-chevron-left"></i>
+              </li>
+              <li>
+                <span>ali</span>
+                <i class="bi bi-chevron-left"></i>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+    <!--!==========================================End Main==========================================!-->
+
+    <!--!==========================================Login Modal==========================================!-->
+    <section class="login-modal" id="login-modal">
+      <div class="login-modal-step1-loader"></div>
+      <div class="login-modal__header">
+        <div class="login-modal__header-wrapper">
+          <span class="login-modal__title">ورود به حساب کاربری</span>
+          <button class="login-modal__header-btn">
+            <i class="login-modal__icon bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="login-modal__main">
+        <span class="login-modal__main-title">شماره موبایل خود را وارد کنید.</span>
+        <p class="login-modal__main-notic">قبل از ثبت آگهی، لطفاً وارد حساب خود شوید.</p>
+        <p class="login-modal__main-notic">کد تأیید به این شماره پیامک می‌شود.</p>
+        <div class="login-modal__form-wrapper">
+          <form class="login-modal__form" action="#">
+            <input class="login-modal__input phone-number-input" style="text-align: left" type="text" placeholder="شماره موبایل" />
+          </form>
+          <span class="login-modal__form-text">+98</span>
+        </div>
+
+        <p class="auth-error-text-elem" style="font-size: 1.2rem; color: #a62626; padding: 0 0 20px 0"></p>
+
+        <div class="login-modal__condition">
+          <a class="login-modal__condition-link" href="#">شرایط استفاده از خدمات</a>
+          <span class="login-modal__condition-text">و</span>
+          <a class="login-modal__condition-link" href="#">حریم خصوصی</a>
+          <span class="login-modal__condition-text">دیوار را میپذیرم.</span>
+        </div>
+      </div>
+      <div class="login-modal__footer">
+        <button class="login-modal__footer-btn login-step1-modal-btn">تایید</button>
+      </div>
+    </section>
+    <section class="login_modal_step_2" id="login_modal_step_2">
+      <div class="login-modal-step2-loader"></div>
+      <div class="login-modal__header">
+        <div class="login-modal__header-wrapper">
+          <span class="login-modal__title">ورود به حساب کاربری</span>
+          <button class="login-modal__header-btn">
+            <i class="login-modal__icon bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="login-modal__main">
+        <span class="login-modal__main-title">کد تأیید را وارد کنید</span>
+        <p class="login-modal__main-notic">کد پیامک‌شده به شمارۀ «<span class="user_number_notice"></span>» را وارد کنید.</p>
+
+        <div class="login-modal__form-wrapper">
+          <form class="login-modal__form code-form" action="#">
+            <input class="login-modal__input code_input" maxlength="4" placeholder="کد تایید 4 رقمی" />
+            <span class="step-2-login-form__error"></span>
+          </form>
+        </div>
+        <div class="login-modal__condition d-flex justify-content-between">
+          <span style="color: #a62626; display: none; font-size: 1.3rem; margin: 0" class="invalid-otp-code"></span>
+          <span class="login-modal__condition-text login-change-number">تغییر شماره موبایل</span>
+        </div>
+      </div>
+      <div class="login-modal__footer">
+        <button class="login-modal__footer-btn req_new_code_btn">درخواست کد</button>
+        <div class="request_timer">
+          <p>درخواست مجدد</p>
+          <span class="otp-time-counter-label">10</span>
+        </div>
+        <button class="login-modal__footer-btn login_btn">ورود</button>
+      </div>
+    </section>
+    <div class="overlay" id="login-overlay" style="top: 0 !important"></div>
+    <!--!==========================================End Login Modal==========================================!-->
+
+    <script src="../../vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./public/js/userpanel-main.js" type="module"></script>
+    <script src="./public/js/newPost.js" type="module"></script>
+  </body>
+</html>

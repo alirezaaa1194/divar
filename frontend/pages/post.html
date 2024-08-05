@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://s100.divarcdn.com/static/thewall-assets/favicon-32x32.png" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./../vendor/swiper/swiper.css" />
+    <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../vendor/bootstrap_icon/bootstraicon.css" />
+    <link rel="stylesheet" href="../public/css/share.css" />
+    <link rel="stylesheet" href="../public/css/product.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.css" />
+  </head>
+
+  <body>
+    <!--!==========================================Header==========================================!-->
+    <site-header></site-header>
+    <!--!==========================================End Header==========================================!-->
+
+    <!--!==========================================Main==========================================!-->
+    <main class="main">
+      <div class="loader_container">
+        <div class="loader_anim"></div>
+      </div>
+      <div class="container">
+        <ul class="main__breadcrumb"></ul>
+        <div class="row">
+          <div class="col-6">
+            <div class="product">
+              <h1 class="product__name"></h1>
+              <span class="product__location"></span>
+              <div class="product__btns">
+                <div class="product__btns-right">
+                  <button class="product__btn-tel">اطلاعات تماس</button>
+                </div>
+                <div class="product__btns-left">
+                  <button class="product__btn-save product__btn">
+                    <i class="product__btn-icon bi bi-bookmark"></i>
+                  </button>
+                  <button class="product__btn-share product__btn">
+                    <i class="product__btn-icon bi bi-share"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="product__infos">
+                <ul class="product__info-list"></ul>
+              </div>
+              <div class="product__intro">
+                <h2 class="product__intro-title">توضیحات</h2>
+                <p class="product__intro-desc"></p>
+              </div>
+              <div class="product__feedback">
+                <div class="product__feedback-right">
+                  <i class="product__feedback-icon bi bi-exclamation-octagon"></i>
+                  <span class="product__feedback-text">کمک به بهبود قیمت و اطلاعات آگهی</span>
+                </div>
+                <div class="product__feedback-left">
+                  <i class="product__feedback-second-icon bi bi-chevron-left"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="product-preview">
+              <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2" dir="rtl">
+                <div class="swiper-wrapper" id="main-swiper"></div>
+                <!-- <div class="swiper-button-next"></div> -->
+                <button class="swiper-next-btn" style="position: absolute; z-index: 9; top: 50%; transform: translateY(-50%); right: 20px">
+                  <i class="bi bi-chevron-right" style="font-size: 1.4rem !important; color: white"></i>
+                </button>
+                <!-- <div class="swiper-button-prev"></div> -->
+                <button class="swiper-prev-btn" style="position: absolute; z-index: 9; top: 50%; transform: translateY(-50%); left: 20px">
+                  <i class="bi bi-chevron-left" style="font-size: 1.4rem !important; color: white"></i>
+                </button>
+              </div>
+              <div thumbsSlider="" class="mySwiper">
+                <div class="swiper-wrapper" id="second-swiper"></div>
+              </div>
+
+              <textarea class="product-preview__input" placeholder="یادداشت شما..."></textarea>
+              <span class="product-preview__input-notics">یادداشت تنها برای شما قابل دیدن است و پس از حذف آگهی، پاک خواهد شد.</span>
+
+              <div class="d-flex justify-content-between py-5">
+                <p class="product-preview__send-text" style="font-size: 1.35rem">بازخورد شما دربارهٔ این آگهی چیست؟</p>
+                <div class="d-flex">
+                  <button class="post-feedback-btn" style="margin: 0 7px"><i class="bi bi-hand-thumbs-down" style="font-size: 2rem; color: black"></i></button>
+                  <button class="post-feedback-btn" style="margin: 0 7px"><i class="bi bi-hand-thumbs-up" style="font-size: 2rem; color: black"></i></button>
+                </div>
+              </div>
+
+              <div class="product-preview__map">
+                <div class="product-preview__map-img" id="map"></div>
+              </div>
+              <div class="product-preview__send">
+                <span class="product-preview__send-title">نحوه خرید از فروشگاه</span>
+                <div class="product-preview__send-item">
+                  <i class="product-preview__send-icon bi bi-truck"></i>
+                  <span class="product-preview__send-text">امکان ارسال به سراسر ایران</span>
+                </div>
+              </div>
+              <div class="product-preview__help">
+                <a class="product-preview__help-item" href="#">
+                  <i class="product-preview__help-icon bi bi-question-circle"></i>
+                  راهنمای خرید امن
+                </a>
+                <a class="product-preview__help-item" href="#">
+                  <i class="product-preview__help-icon bi bi-exclamation-octagon"></i>
+                  ثبت تخلف و مشکل آگهی
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--!==========================================End Main==========================================!-->
+
+    <!--!==========================================Footer==========================================!-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__right">
+            <a class="footer__logo-link" href="#">
+              <img class="footer__logo" src="../images/header/logo.svg" />
+            </a>
+            <div class="footer__links">
+              <a class="footer__link" href="#">درباره دیوار</a>
+              <a class="footer__link" href="#">پشتیبانی و قوانین</a>
+              <a class="footer__link" href="#">بلاگ دیوار</a>
+            </div>
+          </div>
+          <div class="footer__left">
+            <div class="footer__social-media">
+              <a class="footer__social-media-link" href="#">
+                <i class="footer__social-media-icon bi bi-twitter"></i>
+              </a>
+              <a class="footer__social-media-link" href="#">
+                <i class="footer__social-media-icon bi bi-instagram"></i>
+              </a>
+              <a class="footer__social-media-link" href="#">
+                <i class="footer__social-media-icon bi bi-linkedin"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--!==========================================End Footer==========================================!-->
+
+    <!--!==========================================Login Modal==========================================!-->
+    <section class="login-modal" id="login-modal">
+      <div class="login-modal-step1-loader"></div>
+      <div class="login-modal__header">
+        <div class="login-modal__header-wrapper">
+          <span class="login-modal__title">ورود به حساب کاربری</span>
+          <button class="login-modal__header-btn">
+            <i class="login-modal__icon bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="login-modal__main">
+        <span class="login-modal__main-title">شماره موبایل خود را وارد کنید.</span>
+        <p class="login-modal__main-notic">قبل از ثبت آگهی، لطفاً وارد حساب خود شوید.</p>
+        <p class="login-modal__main-notic">کد تأیید به این شماره پیامک می‌شود.</p>
+        <div class="login-modal__form-wrapper">
+          <form class="login-modal__form" action="#">
+            <input class="login-modal__input phone-number-input" style="text-align: left" type="text" placeholder="شماره موبایل" />
+          </form>
+          <span class="login-modal__form-text">+98</span>
+        </div>
+
+        <p class="auth-error-text-elem" style="font-size: 1.2rem; color: #a62626; padding: 0 0 20px 0"></p>
+
+        <div class="login-modal__condition">
+          <a class="login-modal__condition-link" href="#">شرایط استفاده از خدمات</a>
+          <span class="login-modal__condition-text">و</span>
+          <a class="login-modal__condition-link" href="#">حریم خصوصی</a>
+          <span class="login-modal__condition-text">دیوار را میپذیرم.</span>
+        </div>
+      </div>
+      <div class="login-modal__footer">
+        <button class="login-modal__footer-btn login-step1-modal-btn">تایید</button>
+      </div>
+    </section>
+    <section class="login_modal_step_2" id="login_modal_step_2">
+      <div class="login-modal-step2-loader"></div>
+      <div class="login-modal__header">
+        <div class="login-modal__header-wrapper">
+          <span class="login-modal__title">ورود به حساب کاربری</span>
+          <button class="login-modal__header-btn">
+            <i class="login-modal__icon bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="login-modal__main">
+        <span class="login-modal__main-title">کد تأیید را وارد کنید</span>
+        <p class="login-modal__main-notic">کد پیامک‌شده به شمارۀ «<span class="user_number_notice"></span>» را وارد کنید.</p>
+
+        <div class="login-modal__form-wrapper">
+          <form class="login-modal__form code-form" action="#">
+            <input class="login-modal__input code_input" maxlength="4" placeholder="کد تایید 4 رقمی" />
+            <span class="step-2-login-form__error"></span>
+          </form>
+        </div>
+        <div class="login-modal__condition d-flex justify-content-between">
+          <span style="color: #a62626; display: none; font-size: 1.3rem; margin: 0" class="invalid-otp-code"></span>
+          <span class="login-modal__condition-text login-change-number">تغییر شماره موبایل</span>
+        </div>
+      </div>
+      <div class="login-modal__footer">
+        <button class="login-modal__footer-btn req_new_code_btn">درخواست کد</button>
+        <div class="request_timer">
+          <p>درخواست مجدد</p>
+          <span class="otp-time-counter-label">10</span>
+        </div>
+        <button class="login-modal__footer-btn login_btn">ورود</button>
+      </div>
+    </section>
+    <div class="overlay" id="login-overlay" style="top: 0 !important; z-index: 5 !important"></div>
+    <!--!==========================================End Login Modal==========================================!-->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js"></script>
+    <script src="../vendor/sweetalert/sweetalert.min.js"></script>
+    <script type="module" src="../public/js/post.js"></script>
+    <script src="./../vendor/swiper/swiper.js"></script>
+  </body>
+</html>

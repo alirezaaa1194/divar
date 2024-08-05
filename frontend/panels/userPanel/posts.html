@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دیوار من: آگهی های شخصی شما</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://support-faq.divarcdn.com/web/2024/03/favicon-32x32.png" />
+    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap_icon/bootstraicon.css" />
+
+    <link rel="stylesheet" href="./public/css/posts.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap_icon/bootstraicon.css" />
+    <link rel="stylesheet" href="../../public/css/userPanel/share.css" />
+    <link rel="stylesheet" href="../../public/css/userPanel/bookmarks.css" />
+    <link rel="stylesheet" href="../../public/css/main.css" />
+
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="./public/css/share.css" />
+    <link rel="stylesheet" href="../../public/css/product.css" />
+  </head>
+
+  <body>
+    <!--!==========================================Header==========================================!-->
+    <site-header></site-header>
+    <!--!==========================================End Header==========================================!-->
+
+    <!--!==========================================Main==========================================!-->
+    <main class="main">
+      <div class="loader_container">
+        <div class="loader_anim"></div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+            <div class="sidebar">
+              <div class="sidebar__user">
+                <div class="sidebar__user-right">
+                  <i class="sidebar__user-icon bi bi-person"></i>
+                </div>
+                <div class="sidebar__user-left">
+                  <div class="sidebar__user-text">کاربر دیوار</div>
+                  <p id="sidebar-phone-number" class="sidebar__user-phone"></p>
+                </div>
+              </div>
+              <ul class="sidebar__menu-list">
+                <li class="sidebar__menu-item">
+                  <a class="sidebar__menu-link" href="verify.html">
+                    <i class="sidebar__menu-icon bi bi-patch-check"></i>
+                    تایید هویت
+                  </a>
+                </li>
+                <li class="sidebar__menu-item">
+                  <a class="sidebar__menu-link sidebar__menu-link--active" href="posts.html">
+                    <i class="sidebar__menu-icon bi bi-journal"></i>
+                    آگهی های من
+                  </a>
+                </li>
+                <li class="sidebar__menu-item">
+                  <a class="sidebar__menu-link" href="bookmarks.html">
+                    <i class="sidebar__menu-icon bi bi-bookmark"></i>
+                    نشان ها
+                  </a>
+                </li>
+                <li class="sidebar__menu-item">
+                  <a class="sidebar__menu-link" href="notes.html">
+                    <i class="sidebar__menu-icon bi bi-journal"></i>
+                    یادداشت ها
+                  </a>
+                </li>
+                <li class="sidebar__menu-item">
+                  <a class="sidebar__menu-link" href="recent-seen.html">
+                    <i class="sidebar__menu-icon bi bi-clock-history"></i>
+                    بازدید های اخیر
+                  </a>
+                </li>
+              </ul>
+              <p class="sidebar__logout sidebar__link-item" id="logout-btn">
+                <i class="sidebar__logout-icon sidebar__link-icon bi bi-box-arrow-right"></i>
+                خروج
+              </p>
+              <div class="sidebar__links">
+                <a class="sidebar__link" href="#">درباره دیوار</a>
+                <a class="sidebar__link" href="#">دریافت برنامه</a>
+                <a class="sidebar__link" href="#">پشتیبانی و قوانین</a>
+              </div>
+              <div class="sidebar__social">
+                <a class="sidebar__social-link" href="#">
+                  <i class="sidebar__social-icon bi bi-twitter"></i>
+                </a>
+                <a class="sidebar__social-link" href="#">
+                  <i class="sidebar__social-icon bi bi-instagram"></i>
+                </a>
+                <a class="sidebar__social-link" href="#">
+                  <i class="sidebar__social-icon bi bi-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-9 container">
+            <section class="posts row justify-content-start" id="datas_container"></section>
+            <div class="empty">
+              <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoMjAwdjIwMEgweiIvPjxnIGZpbGwtcnVsZT0ibm9uemVybyI+PHBhdGggZmlsbD0iIzkxOUJBQSIgZD0ibTEzNi43NiAxNzQuNjMtMzQuNDMtMTAuNzgtNDIuNjctOS40LTMxLjAzLTEwLjYgMjIuMTctMjUuOCA5MC4zMyAzMi4zMnoiIG9wYWNpdHk9Ii4zMiIvPjxwYXRoIGZpbGw9IiNFQUVERUYiIGQ9Im0yMC44IDEyNy44NCAzOC42OCAyNS44NiA0Mi44NS01Mi45NS0zOC42Ny0yNS44N3oiLz48cGF0aCBmaWxsPSIjRjlGQkZDIiBkPSJtNTkuNDggMTUzLjcgMzguNDItNC45M0wxNDEgOTUuODJsLTM4LjY3IDQuOTN6Ii8+PHBhdGggZmlsbD0iI0U5RURFRiIgZD0ibTk3LjkgMTQ4Ljc3IDM4LjQzIDI1Ljg2IDQzLjEtNTIuN0wxNDEgOTUuODF6Ii8+PHBhdGggZmlsbD0iI0NCRDBFMCIgZD0ibTY0LjczIDEyOS4yMyAyLjAzIDEuNDEgMjQuNTgtMzAuMjMtMi4wMy0xLjQ4em0xMy41LTguODIgMi4wMyAxLjQxIDE0Ljg0LTE4LjIxLTIuMDMtMS40OHoiLz48cGF0aCBmaWxsPSIjRTNFOEYyIiBkPSJtNzcuNDYgMTM2LjM2IDIuMTUtLjI1TDEwMy44IDEwNmgtMi4yMnptMTMuMTctNC42MiAyLjE1LS4yNSA4Ljg4LTExLjA4aC0yLjIyem0xMS4wMy0xNC4wNCAyLjE1LS4yNSA4Ljg3LTExLjA3aC0yLjIyem0tMTQuNTQgMTIuMTYgMi4xNS0uMjUgMTguODUtMjMuNThoLTIuMjJ6Ii8+PHBhdGggZmlsbD0iI0U0RTlFRSIgZD0ibTEwNC44MyAxNDAuNDYtNi4wOS42NyAxOS40Ni0yNC4zNyA2LjQtLjc0eiIvPjxwYXRoIGZpbGw9IiNDOUQwREUiIGQ9Im0xMDQuODMgMTQwLjQ2IDExLjAzIDcuNTEgMTkuNy0yNC42Mi0xMC45Ni03LjMzem0tNTUuMjUtMzEuMjggMTAuOCA3LjgzTDgwLjggOTIuOTdsLTEwLjc0LTcuNjV6bTEwMi4xNCAyOS44IDEuOTQgMS41IDE0LjgtMTguMS0yLjItMS41N3oiLz48L2c+PC9nPjwvc3ZnPg==" alt />
+              <p>در حال حاضر آگهی ثبت‌شده ندارید.</p>
+              <!-- <a href="./newPost.html" style="margin-top: 20px; padding:8px 12px; border-radius: 5px; color: aliceblue; background-color: #a62626; font-size: 1.4rem;">ثبت آگهی</a> -->
+              <a href="./newPost.html" style="margin-top: 25px; font-size: var(--font-size-md); background-color: var(--primary-color); color: var(--white-color); border-radius: 0.3rem; padding: 0.8rem 1.3rem">ثبت آگهی</a>
+            </div>
+            <ul class="pagination-container py-5"></ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--!==========================================End Main==========================================!-->
+
+    <!--!==========================================city Modal==========================================!-->
+    <section class="login-modal" id="login-modal">
+      <div class="login-modal-step1-loader"></div>
+      <div class="login-modal__header">
+        <div class="login-modal__header-wrapper">
+          <span class="login-modal__title">ورود به حساب کاربری</span>
+          <button class="login-modal__header-btn">
+            <i class="login-modal__icon bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="login-modal__main">
+        <span class="login-modal__main-title">شماره موبایل خود را وارد کنید.</span>
+        <p class="login-modal__main-notic">قبل از ثبت آگهی، لطفاً وارد حساب خود شوید.</p>
+        <p class="login-modal__main-notic">کد تأیید به این شماره پیامک می‌شود.</p>
+        <div class="login-modal__form-wrapper">
+          <form class="login-modal__form" action="#">
+            <input class="login-modal__input phone-number-input" style="text-align: left" type="text" placeholder="شماره موبایل" />
+          </form>
+          <span class="login-modal__form-text">+98</span>
+        </div>
+
+        <p class="auth-error-text-elem" style="font-size: 1.2rem; color: #a62626; padding: 0 0 20px 0"></p>
+
+        <div class="login-modal__condition">
+          <a class="login-modal__condition-link" href="#">شرایط استفاده از خدمات</a>
+          <span class="login-modal__condition-text">و</span>
+          <a class="login-modal__condition-link" href="#">حریم خصوصی</a>
+          <span class="login-modal__condition-text">دیوار را میپذیرم.</span>
+        </div>
+      </div>
+      <div class="login-modal__footer">
+        <button class="login-modal__footer-btn login-step1-modal-btn">تایید</button>
+      </div>
+    </section>
+    <section class="login_modal_step_2" id="login_modal_step_2">
+      <div class="login-modal-step2-loader"></div>
+      <div class="login-modal__header">
+        <div class="login-modal__header-wrapper">
+          <span class="login-modal__title">ورود به حساب کاربری</span>
+          <button class="login-modal__header-btn">
+            <i class="login-modal__icon bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="login-modal__main">
+        <span class="login-modal__main-title">کد تأیید را وارد کنید</span>
+        <p class="login-modal__main-notic">کد پیامک‌شده به شمارۀ «<span class="user_number_notice"></span>» را وارد کنید.</p>
+
+        <div class="login-modal__form-wrapper">
+          <form class="login-modal__form code-form" action="#">
+            <input class="login-modal__input code_input" maxlength="4" placeholder="کد تایید 4 رقمی" />
+            <span class="step-2-login-form__error"></span>
+          </form>
+        </div>
+        <div class="login-modal__condition d-flex justify-content-between">
+          <span style="color: #a62626; display: none; font-size: 1.3rem; margin: 0" class="invalid-otp-code"></span>
+          <span class="login-modal__condition-text login-change-number">تغییر شماره موبایل</span>
+        </div>
+      </div>
+      <div class="login-modal__footer">
+        <button class="login-modal__footer-btn req_new_code_btn">درخواست کد</button>
+        <div class="request_timer">
+          <p>درخواست مجدد</p>
+          <span class="otp-time-counter-label">10</span>
+        </div>
+        <button class="login-modal__footer-btn login_btn">ورود</button>
+      </div>
+    </section>
+    <div class="overlay" id="login-overlay" style="top: 0 !important"></div>
+    <!--!==========================================End city Modal==========================================!-->
+    <script src="../../public/js/utils/auth.js" type="module"></script>
+    <script src="./public/js/userpanel-main.js" type="module"></script>
+    <script src="./public/js/posts.js" type="module"></script>
+    <script src="../../vendor/bootstrap/bootstrap.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>

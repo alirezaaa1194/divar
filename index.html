@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://s100.divarcdn.com/static/thewall-assets/favicon-32x32.png" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>دیوار</title>
+    <link rel="stylesheet" href="./frontend/vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="./frontend/vendor/bootstrap_icon/bootstraicon.css" />
+    <link rel="stylesheet" href="./frontend/public/css/share.css" />
+    <link rel="stylesheet" href="./frontend/public/css/index.css" />
+  </head>
+
+  <body>
+    <!--!==========================================Wrapper==========================================!-->
+    <section class="wrapper">
+      <div class="loader_container">
+        <div class="loader_anim"></div>
+      </div>
+      <!--!==========================================Header==========================================!-->
+      <header class="header">
+        <img class="header__logo" src="./frontend/public/images/header/logo.svg" />
+        <ul class="header__menu-list">
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">ثبت آگهی</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">درباره دیوار</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">دریافت برنامه</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="#">بلاگ</a>
+          </li>
+          <li class="header__menu-item">
+            <a class="header__menu-link" href="./frontend/panels/support/support.html">پشتیبانی</a>
+          </li>
+        </ul>
+      </header>
+      <!--!==========================================End Header==========================================!-->
+
+      <!--!==========================================Main==========================================!-->
+      <main class="main">
+        <span class="main__text-first">دﯾﻮار، ﭘﺎﯾﮕﺎه ﺧﺮﯾﺪ و ﻓﺮوش ﺑﯽ‌واﺳﻄﻪ‌!</span>
+        <span class="main__text-second">اﮔﻪ دﻧﺒﺎل ﭼﯿﺰی ﻫﺴﺘﯽ، ﺷﻬﺮت رو اﻧﺘﺨﺎب ﮐﻦ و ﺗﻮ دﺳﺘﻪ‌ﺑﻨﺪی‌ﻫﺎ ﺑﻪ دﻧﺒﺎﻟﺶ ﺑﮕﺮد. اﮔﺮ ﻫﻢ ﻣﯽ‌ﺧﻮای ﭼﯿﺰی ﺑﻔﺮوﺷﯽ، ﭼﻨﺪ ﺗﺎ ﻋﮑﺲ ﺧﻮب ازش ﺑﮕﯿﺮ و آﮔﻬﯿﺖ رو ﺑﭽﺴﺒﻮن ﺑﻪ دﯾﻮار.</span>
+        <form class="main__form">
+          <i class="main__icon-input bi bi-search" id="search-btn"></i>
+          <input class="main__input" type="text" placeholder="جستجوی شهر" id="search-input" />
+
+          <!-- add class active to show search result box -->
+          <ul class="search-result-cities">
+            <!-- get data from js -->
+          </ul>
+        </form>
+        <div class="main__cities">
+          <span class="main__cities-title">شهر های پر بازدید</span>
+          <ul class="main__cities-list">
+            <div class="row popularCities-container">
+              <!-- get data from js -->
+            </div>
+          </ul>
+        </div>
+      </main>
+      <!--!==========================================End Main==========================================!-->
+
+      <!--!==========================================Footer==========================================!-->
+      <footer class="footer">
+        <div class="footer__section-first">
+          <div class="footer__imgs">
+            <a class="footer__img-link" href="#">
+              <img class="footer__img" src="./frontend/public/images/main/enamad.png" alt="" />
+            </a>
+            <a class="footer__img-link" href="#">
+              <img class="footer__img" src="./frontend/public/images/main/etehadie.png" alt="" />
+            </a>
+            <a class="footer__img-link" href="#">
+              <img class="footer__img" src="./frontend/public/images/main/neshan.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="footer__section-second">
+          <ul class="footer__list socialMedia-container"></ul>
+        </div>
+      </footer>
+      <!--!==========================================End Footer==========================================!-->
+    </section>
+    <!--!==========================================End Wrapper==========================================!-->
+    <script type="module" src="./frontend/public/js/index.js"></script>
+  </body>
+</html>

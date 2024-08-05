@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://s100.divarcdn.com/static/thewall-assets/favicon-32x32.png" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="../vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../vendor/bootstrap_icon/bootstraicon.css" />
+    <link rel="stylesheet" href="../public/css/share.css" />
+    <link rel="stylesheet" href="../public/css/main.css" />
+    <link rel="stylesheet" href="../public/css/product.css" />
+  </head>
+
+  <body>
+    <!--!==========================================Header==========================================!-->
+    <site-header></site-header>
+    <!--!==========================================End Header==========================================!-->
+
+    <!--!==========================================Main==========================================!-->
+    <main class="main" style="position: relative">
+      <div class="loader_container">
+        <div class="loader_anim"></div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-3">
+            <div class="sidebar">
+              <div class="sidebar__category">
+                <div class="d-flex align-items-center justify-content-between lead">
+                  <span class="sidebar__category-title">دسته ها</span>
+                </div>
+                <ul class="sidebar__category-list">
+                  <!-- get data from js -->
+                </ul>
+              </div>
+              <div class="sidebar__filters">
+                <div class="accordion filters-accordion" id="accordionExample">
+                  <div class="accordion-item border-0 border-bottom py-3">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button shadow-none bg-white collapsed" id="price-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#price-accordion" aria-expanded="true" aria-controls="collapseOne">
+                        قیمت
+                        <i class="bi bi-chevron-down"></i>
+                      </button>
+                    </h2>
+                    <div id="price-accordion" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <div class="d-flex align-items-center" style="gap: 20px">
+                          <span class="filter-label-text">حداقل</span>
+
+                          <select name="" id="min-price-input">
+                            <option value="default">وارد کردن مقدار دلخواه</option>
+                            <option value="10000">۱۰ هزار</option>
+                            <option value="25000">۲۵ هزار</option>
+                            <option value="50000">۵۰ هزار</option>
+                            <option value="70000">۷۰ هزار</option>
+                            <option value="100000">۱۰۰ هزار</option>
+                            <option value="150000">۱۵۰ هزار</option>
+                            <option value="300000">۳۰۰ هزار</option>
+                            <option value="500000">۵۰۰ هزار</option>
+                            <option value="1000000">۱ میلیون</option>
+                            <option value="2000000">۲ میلیون</option>
+                            <option value="5000000">۵ میلیون</option>
+                            <option value="10000000">۱۰ میلیون</option>
+                            <option value="50000000">۵۰ میلیون</option>
+                            <option value="200000000">۲۰۰ میلیون</option>
+                          </select>
+                        </div>
+                        <div class="d-flex align-items-center" style="gap: 20px">
+                          <span class="filter-label-text">حداکثر</span>
+
+                          <select name="" id="max-price-input">
+                            <option value="default">وارد کردن مقدار دلخواه</option>
+                            <option value="10000">۱۰ هزار</option>
+                            <option value="25000">۲۵ هزار</option>
+                            <option value="50000">۵۰ هزار</option>
+                            <option value="70000">۷۰ هزار</option>
+                            <option value="100000">۱۰۰ هزار</option>
+                            <option value="150000">۱۵۰ هزار</option>
+                            <option value="300000">۳۰۰ هزار</option>
+                            <option value="500000">۵۰۰ هزار</option>
+                            <option value="1000000">۱ میلیون</option>
+                            <option value="2000000">۲ میلیون</option>
+                            <option value="5000000">۵ میلیون</option>
+                            <option value="10000000">۱۰ میلیون</option>
+                            <option value="50000000">۵۰ میلیون</option>
+                            <option value="200000000">۲۰۰ میلیون</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item border-0 border-bottom py-3">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button shadow-none bg-white" id="status-accordion-btn" type="button" data-bs-toggle="collapse" data-bs-target="#status-accordion-body" aria-expanded="true" aria-controls="collapseOne">
+                        وضعیت آگهی
+                        <i class="bi bi-chevron-down"></i>
+                      </button>
+                    </h2>
+                    <div id="status-accordion-body" class="accordion-collapse collapse">
+                      <div class="accordion-body">
+                        <span class="delete-all-filters">حذف</span>
+                        <div class="">
+                          <input type="checkbox" class="filter-checkbox status-filter-checkbox" id="have-image-posts" />
+
+                          <label for="have-image-posts" class="posts-checkBox have-image-posts-label">
+                            <div class="">
+                              <span></span>
+                            </div>
+                            <span class="filter-label-text">فقط عکس دار</span>
+                          </label>
+                        </div>
+                        <div class="">
+                          <input type="checkbox" class="filter-checkbox status-filter-checkbox" id="exchange-posts" />
+
+                          <label for="exchange-posts" class="posts-checkBox quick-sale-posts-label">
+                            <div class=""><span></span></div>
+                            <span class="filter-label-text">معاوضه</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sidebar__links">
+                <a class="sidebar__link" href="#">درباره دیوار</a>
+                <a class="sidebar__link" href="#">دریافت برنامه</a>
+                <a class="sidebar__link" href="#">بلاگ دیوار</a>
+                <a class="sidebar__link" href="#">کسب و کارها</a>
+                <a class="sidebar__link" href="#">پشتیبانی و قوانین</a>
+              </div>
+              <div class="sidebar__icons">
+                <a class="sidebar__icon-link" href="#">
+                  <i class="sidebar__icon bi bi-twitter"></i>
+                </a>
+                <a class="sidebar__icon-link" href="#">
+                  <i class="sidebar__icon bi bi-instagram"></i>
+                </a>
+                <a class="sidebar__icon-link" href="#">
+                  <i class="sidebar__icon bi bi-linkedin"></i>
+                </a>
+              </div>
+              <div class="sidebar__images">
+                <div class="row">
+                  <div class="col-4">
+                    <a class="sidebar__image-link" href="#">
+                      <img class="sidebar__image img-fluid" src="../images/main/enamad.png" />
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a class="sidebar__image-link" href="#">
+                      <img class="sidebar__image img-fluid" src="../images/main/etehadie.png" />
+                    </a>
+                  </div>
+                  <div class="col-4">
+                    <a class="sidebar__image-link" href="#">
+                      <img class="sidebar__image img-fluid" src="../images/main/neshan.png" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-9">
+            <div class="row g-4" id="datas_container">
+              <!-- get data from js -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--!==========================================End Main==========================================!-->
+    <!--!==========================================Login Modal==========================================!-->
+    <section class="login-modal">
+      <div class="login-modal__header">
+        <div class="login-modal__header-wrapper">
+          <span class="login-modal__title">ورود به حساب کاربری</span>
+          <button class="login-modal__header-btn">
+            <i class="login-modal__icon bi bi-x"></i>
+          </button>
+        </div>
+      </div>
+      <div class="login-modal__main">
+        <span class="login-modal__main-title">شماره موبایل خود را وارد کنید.</span>
+        <p class="login-modal__main-notic">قبل از ثبت آگهی، لطفاً وارد حساب خود شوید.</p>
+        <p class="login-modal__main-notic">کد تأیید به این شماره پیامک می‌شود.</p>
+        <div class="login-modal__form-wrapper">
+          <form class="login-modal__form" action="#">
+            <input class="login-modal__input" type="text" placeholder="شماره موبایل" />
+          </form>
+          <span class="login-modal__form-text">+98</span>
+        </div>
+        <div class="login-modal__condition">
+          <a class="login-modal__condition-link" href="#">شرایط استفاده از خدمات</a>
+          <span class="login-modal__condition-text">و</span>
+          <a class="login-modal__condition-link" href="#">حریم خصوصی</a>
+          <span class="login-modal__condition-text">دیوار را میپذیرم.</span>
+        </div>
+      </div>
+      <div class="login-modal__footer">
+        <button class="login-modal__footer-btn">تایید</button>
+      </div>
+    </section>
+    <!--!==========================================End Login Modal==========================================!-->
+
+    <!--!==========================================Overlay Modal==========================================!-->
+    <section class="overlay"></section>
+    <!--!==========================================End Overlay Modal==========================================!-->
+
+    <!--!==========================================Overlay Searchbar==========================================!-->
+    <section class="overlay-header" id="overlay-header"></section>
+    <!--!==========================================End Overlay Searchbar==========================================!-->
+    <script src="../vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../public/js/utils/utils.js"></script>
+    <script type="module" src="../public/js/utils/shared.js"></script>
+    <script type="module" src="../public/js/posts.js"></script>
+  </body>
+</html>

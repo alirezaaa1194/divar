@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مرکز پشتیبانی دیوار</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="https://support-faq.divarcdn.com/web/2024/03/favicon-32x32.png" />
+    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap_icon/bootstraicon.css" />
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="./public/css/support.css" />
+
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="../../public/css/main.css" />
+    <link rel="stylesheet" href="../../public/css/product.css" />
+  </head>
+
+  <body>
+    <!--!==========================================Header==========================================!-->
+    <site-header></site-header>
+
+    <!--!==========================================End Header==========================================!-->
+
+    <!--!===========================================Main==========================================!-->
+    <main class="main">
+      <div class="loader_container">
+        <div class="loader_anim"></div>
+      </div>
+      <div class="topbar">
+        <p>به مرکز پشتیبانی دیوار خوش آمدید</p>
+        <span>چطور می‌توانیم کمکتان کنیم؟</span>
+        <div>
+          <i id="remove-icon" class="bi bi-x"></i>
+          <input autocomplete="off" id="search-input" type="text" placeholder="جستجو در مقالات" />
+          <i class="bi bi-search input-search-icon"></i>
+          <div class="result" id="search-result"></div>
+        </div>
+      </div>
+      <div class="support_container">
+        <div class="articles">
+          <div class="articles_title">
+            <p>شاید برای شما هم سوال باشد</p>
+          </div>
+          <div class="container py-5">
+            <div class="row w-100 g-4 support-articles-container">
+              <!-- get data from js -->
+            </div>
+          </div>
+        </div>
+
+        <div class="articles_title">
+          <p>با دیوار بیشتر آشنا شوید</p>
+        </div>
+        <div class="container py-5">
+          <div class="row w-100 g-4 support-categories-container">
+            <!-- get data from js -->
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--!==========================================End Main==========================================!-->
+    <!--!==========================================Footer==========================================!-->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__wrapper">
+          <div class="footer__right">
+            <a class="footer__logo-link" href="#">
+              <img class="footer__logo" src="/public/images/header/logo.svg" />
+            </a>
+            <div class="footer__links">
+              <a class="footer__link" href="#">درباره دیوار</a>
+              <a class="footer__link" href="#">پشتیبانی و قوانین</a>
+              <a class="footer__link" href="#">بلاگ دیوار</a>
+            </div>
+          </div>
+          <div class="footer__left">
+            <div class="footer__social-media" id="footer__social-media"></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--!==========================================End Footer==========================================!-->
+
+    <script src="../../vendor/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./public/js/support.js" type="module"></script>
+
+    <script src="../../public/js/utils/auth.js" type="module"></script>
+    <!-- <script src="../userPanel/js/userpanel-main.js" type="module"></script> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </body>
+</html>

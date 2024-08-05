@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ثبت آگهی در دیوار</title>
+    <link rel="stylesheet" href="../../vendor/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="../../vendor/bootstrap_icon/bootstraicon.css" />
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="./public/css/registerPost.css" />
+
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="./public/css/newPost.css" />
+    <link rel="stylesheet" href="./public/css" />
+
+    <link rel="stylesheet" href="../../public/css/main.css" />
+
+    <link rel="stylesheet" href="../../public/css/share.css" />
+    <link rel="stylesheet" href="./public/css/share.css" />
+    <link rel="stylesheet" href="../../public/css/product.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.css">
+  </head>
+
+  <body>
+    <!--!==========================================Header==========================================!-->
+    <site-header></site-header>
+    <!--!==========================================End Header==========================================!-->
+
+    <!--!===========================================Main==========================================!-->
+    <main class="main">
+      <div class="loader_container">
+        <div class="loader_anim"></div>
+      </div>
+      <p class="category-title">ثبت آگهی</p>
+      <div class="category_details">
+        <p class="main-category-label"></p>
+        <img src="https://s100.divarcdn.com/statics/2024/02/entertainment.2ee67eb3.png" alt />
+        <button class="change-catgory">تغییر دسته‌بندی</button>
+      </div>
+      <div class="groups">
+        <div class="group">
+            <p class="field-title">شهر</p> 
+                <select id="city-select" required="required"></select> 
+            </label> 
+        </div>
+        <div class="group">
+            <p class="field-title">محله</p> 
+                <select id="neighborhood-select" required="required"> </select> 
+        </div>
+    </div>
+    <div>
+        <p class="field-title">موقعیت مکانی آگهی</p>
+        <div id="map"></div>
+        <div class="map-controll">
+            <p>موقعیت دقیق نمایش داده نشود</p>
+            <label class="switch">
+                <input class="icon-controll" id="showMap-checkbox"
+                    type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
+    </div>
+    <div class="uploader">
+        <p class="field-title">عکس آگهی</p>
+        <span>عکس‌هایی مربوط به آگهی اضافه کنید.</span>
+        <span>در صورت نداشتن عکس ، آگهی را بدون عکس
+            ثبت کنید</span>
+        <div class="post-images">
+            <div class="uploader-box">
+                <i class="bi bi-image"></i>
+                <i class="bi bi-plus-circle-fill"></i>
+                <input id="uploader" type="file" multiple>
+            </div>
+            <div class="images" id="images-container">
+            </div>
+        </div>
+        <span>تعداد عکس‌های انتخاب شده نباید بیشتر
+            از ۲۰ باشد.</span>
+    </div>
+    <div class="groups" id="dynamic-fields"></div>
+    
+    <div class="groups">
+      
+        <div class="group edit-post-title">
+            <p class="field-title">قیمت</p>
+            <input id="post-price-input" type="number">
+        </div>
+        <div class="group checkbox-group">
+            <input class="checkbox" id="exchange-checkbox" type="checkbox">
+            <p> مایلم معاوضه کنم</p>
+        </div>
+        <div class="group">
+            <p class="field-title">عنوان آگهی</p>
+            <span>در عنوان آگهی به موارد مهمی مانند
+                نوع ملک و متراژ اشاره کنید. </span>
+            <input id="post-title-input" type="text">
+        </div>
+
+        <div class="group">
+            <p class="field-title">توضیحات آگهی</p>
+            <span>در توضیحات آگهی به مواردی مانند
+                شرایط فروش، جزئیات و ویژگی‌های قابل
+                توجه، دسترسی‌های محلی و موقعیت
+                قرارگیری ملک اشاره کنید.</span>
+            <textarea  id="post-description-textarea" id cols="30" rows="8"></textarea>
+        </div>
+    </div>
+    <div class="post_controll">
+        <a href="../../pages/posts.html">انصراف</a>
+        <button id="register-btn">ارسال آگهی</button>
+    </div>
+    </main>
+
+    <section class="login-modal" id="login-modal">
+        <div class="login-modal-step1-loader"></div>
+        <div class="login-modal__header">
+          <div class="login-modal__header-wrapper">
+            <span class="login-modal__title">ورود به حساب کاربری</span>
+            <button class="login-modal__header-btn">
+              <i class="login-modal__icon bi bi-x"></i>
+            </button>
+          </div>
+        </div>
+        <div class="login-modal__main">
+          <span class="login-modal__main-title">شماره موبایل خود را وارد کنید.</span>
+          <p class="login-modal__main-notic">قبل از ثبت آگهی، لطفاً وارد حساب خود شوید.</p>
+          <p class="login-modal__main-notic">کد تأیید به این شماره پیامک می‌شود.</p>
+          <div class="login-modal__form-wrapper">
+            <form class="login-modal__form" action="#">
+              <input class="login-modal__input phone-number-input" style="text-align: left" type="text" placeholder="شماره موبایل" />
+            </form>
+            <span class="login-modal__form-text">+98</span>
+          </div>
+  
+          <p class="auth-error-text-elem" style="font-size: 1.2rem; color: #a62626; padding: 0 0 20px 0"></p>
+  
+          <div class="login-modal__condition">
+            <a class="login-modal__condition-link" href="#">شرایط استفاده از خدمات</a>
+            <span class="login-modal__condition-text">و</span>
+            <a class="login-modal__condition-link" href="#">حریم خصوصی</a>
+            <span class="login-modal__condition-text">دیوار را میپذیرم.</span>
+          </div>
+        </div>
+        <div class="login-modal__footer">
+          <button class="login-modal__footer-btn login-step1-modal-btn">تایید</button>
+        </div>
+      </section>
+      <section class="login_modal_step_2" id="login_modal_step_2">
+        <div class="login-modal-step2-loader"></div>
+        <div class="login-modal__header">
+          <div class="login-modal__header-wrapper">
+            <span class="login-modal__title">ورود به حساب کاربری</span>
+            <button class="login-modal__header-btn">
+              <i class="login-modal__icon bi bi-x"></i>
+            </button>
+          </div>
+        </div>
+        <div class="login-modal__main">
+          <span class="login-modal__main-title">کد تأیید را وارد کنید</span>
+          <p class="login-modal__main-notic">کد پیامک‌شده به شمارۀ «<span class="user_number_notice"></span>» را وارد کنید.</p>
+  
+          <div class="login-modal__form-wrapper">
+            <form class="login-modal__form code-form" action="#">
+              <input class="login-modal__input code_input" maxlength="4" placeholder="کد تایید 4 رقمی" />
+              <span class="step-2-login-form__error"></span>
+            </form>
+          </div>
+          <div class="login-modal__condition d-flex justify-content-between">
+            <span style="color: #a62626; display: none; font-size: 1.3rem; margin: 0" class="invalid-otp-code"></span>
+            <span class="login-modal__condition-text login-change-number">تغییر شماره موبایل</span>
+          </div>
+        </div>
+        <div class="login-modal__footer">
+          <button class="login-modal__footer-btn req_new_code_btn">درخواست کد</button>
+          <div class="request_timer">
+            <p>درخواست مجدد</p>
+            <span class="otp-time-counter-label">10</span>
+          </div>
+          <button class="login-modal__footer-btn login_btn">ورود</button>
+        </div>
+      </section>
+      <div class="overlay" id="login-overlay" style="top: 0 !important"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/viewerjs/1.11.6/viewer.min.js"></script>
+    <script src="../../vendor/sweetalert/sweetalert.min.js"></script>
+    <script src="./public/js/userpanel-main.js" type="module"></script>
+    <script src="./public/js/registerPost.js" type="module"></script>
+  </body>
+</html>
