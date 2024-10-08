@@ -1016,7 +1016,7 @@ export class Header extends HTMLElement {
   createNewPostBtnHAndler() {
     this.headerRegisterNewPostBtn.addEventListener("click", () => {
       if (isLogin()) {
-        location.href = `${localHost}frontend/panels/userpanel/newPost.html`;
+        location.href = `${localHost}frontend/panels/userPanel/newPost.html`;
       } else {
         this.showModal("login-modal", "login-modal--active");
         this.showModal("login-overlay", "overlay--active");
